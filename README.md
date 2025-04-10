@@ -1,212 +1,270 @@
-# 一键脚本集合
+# 一键脚本大全
 
-> 点击分类标题展开，一键复制脚本命令。  
-> ⚠️ 注意：执行第三方脚本前请确认来源可信。
+> **📢 使用说明**：每个代码块均为独立命令，点击右上角复制按钮直接使用  
+> **⚠️ 注意事项**：部分脚本需 root 权限，执行前请确认网络畅通
 
 ---
 
-## 🛠️ 系统重装脚本
-
-### 1. Linux 系统重装
+## 🔍 VPS 基本信息检测
 ```bash
-# 史上最强脚本（Debian 12）
+# 快速检测服务器基础信息
+bash <(curl -sL https://run.NodeQuality.com)
+```
+
+---
+
+## 🌏 网络质量检测
+```bash
+# 完整路由测试（TCP大包，北京+上海+广东）
+bash <(curl -Ls Net.Check.Place) -R
+```
+
+```bash
+# 低流量模式（Mb级流量多维度测试）
+bash <(curl -Ls Net.Check.Place) -L
+```
+
+---
+
+## 🛠️ 系统重装（DD）
+
+### Linux 系统
+```bash
+# 史上最强脚本 - Debian 12
 wget --no-check-certificate -qO InstallNET.sh 'https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh' && chmod a+x InstallNET.sh && bash InstallNET.sh -debian 12 -pwd 'password'
+```
 
-# 萌咖大佬脚本（Debian 11）
+```bash
+# 萌咖脚本 - Debian 11
 bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') -d 11 -v 64 -p 密码 -port 端口 -a -firmware
+```
 
-# beta.gs大佬脚本
+```bash
+# beta.gs 脚本
 wget --no-check-certificate -O NewReinstall.sh https://raw.githubusercontent.com/fcurrk/reinstall/master/NewReinstall.sh && chmod a+x NewReinstall.sh && bash NewReinstall.sh
 ```
 
-### 2. Windows 系统重装
+### Windows 系统
 ```bash
-# 史上最强脚本（Windows 10）
+# Windows 10 中文版
 bash <(curl -sSL https://raw.githubusercontent.com/leitbogioro/Tools/master/Linux_reinstall/InstallNET.sh) -windows 10 -lang "cn"
+```
 
-# 使用说明
-# 账户：Administrator
-# 密码：Teddysun.com
-# 使用Windows徽标+R快捷键打开运行框，输入powershell运行，弹出powershell命名输入窗口，输入以下命令：
+```bash
+# Windows 激活命令（PowerShell中执行）
 irm https://get.activated.win | iex
 ```
 
 ---
 
-## 📊 综合测试脚本
+## 📊 综合测试
 
-### 1. 基础测试
+### 基础测试
 ```bash
-# bench.sh
+# Bench.sh 基础测试
 wget -qO- bench.sh | bash
+```
 
+```bash
 # LemonBench 快速测试
 wget -qO- https://raw.githubusercontent.com/LemonBench/LemonBench/main/LemonBench.sh | bash -s -- --fast
+```
 
-# 融合怪测试
+```bash
+# 融合怪多合一测试
 bash <(wget -qO- --no-check-certificate https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh)
+```
 
-# NodeBench
+```bash
+# NodeBench 专项测试
 bash <(curl -sL https://raw.githubusercontent.com/LloydAsp/NodeBench/main/NodeBench.sh)
 ```
 
 ---
 
-## 🏋️ 性能测试
-
-### 1. yabsc 测试
+## 🏋️ 性能测试 (YABS)
 ```bash
-# 跳过网络，测GB5
+# 完整性能测试
+curl -sL yabs.sh | bash
+```
+
+```bash
+# 仅测 Geekbench 5（跳过网络）
 curl -sL yabs.sh | bash -s -- -i5
+```
 
-# 跳过网络和磁盘，测GB5
+```bash
+# 仅测 Geekbench 5（跳过网络+磁盘）
 curl -sL yabs.sh | bash -s -- -if5
+```
 
-# 改测GB5不测GB6
+```bash
+# 指定 Geekbench 5 测试
 curl -sL yabs.sh | bash -s -- -5
 ```
 
 ---
 
-## 📺 流媒体及IP质量测试
-
-### 1. 流媒体测试
+## 📺 流媒体解锁检测
 ```bash
-# 最常用版本
+# 通用流媒体检测
 bash <(curl -L -s check.unlock.media)
+```
 
-# 原生检测脚本
+```bash
+# 原生 IP 检测
 bash <(curl -sL Media.Check.Place)
+```
 
-# 准确度最高
+```bash
+# 高精度地区检测
 bash <(curl -L -s https://github.com/1-stream/RegionRestrictionCheck/raw/main/check.sh)
 ```
 
-### 2. IP质量测试
 ```bash
-# IP质量体检脚本
+# IP 质量体检
 bash <(curl -sL IP.Check.Place)
+```
 
-# 一键修改解锁DNS
-wget https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/refs/heads/main/dns-unlock.sh && bash dns-unlock.sh
+```bash
+# DNS 解锁工具
+wget https://raw.githubusercontent.com/Jimmyzxk/DNS-Alice-Unlock/main/dns-unlock.sh && bash dns-unlock.sh
 ```
 
 ---
 
-## 📶 测速脚本
-
-### 1. 常用测速工具
+## 🚀 网络测速
 ```bash
-# Speedtest
+# Speedtest 经典测速
 bash <(curl -sL bash.icu/speedtest)
+```
 
-# Taier
+```bash
+# Taier 多节点测速
 bash <(curl -sL res.yserver.ink/taier.sh)
+```
 
-# hyperspeed
+```bash
+# hyperspeed 极速测试
 bash <(curl -Lso- https://bench.im/hyperspeed)
+```
 
-# 全球测速
+```bash
+# 全球节点测速
 curl -sL network-speed.xyz | bash
 ```
 
 ---
 
-## 🔎 回程测试
-
-### 1. 回程测试工具
+## 🔁 回程路由测试
 ```bash
-# 直接显示回程（小白用这个）
+# 简易回程测试
 curl https://raw.githubusercontent.com/ludashi2020/backtrace/main/install.sh -sSf | sh
+```
 
-# 回程详细测试（推荐）
+```bash
+# 详细回程测试 (推荐)
 wget -N --no-check-certificate https://raw.githubusercontent.com/Chennhaoo/Shell_Bash/master/AutoTrace.sh && chmod +x AutoTrace.sh && bash AutoTrace.sh
+```
 
-# 详细回程测试
+```bash
+# 三网深度测试
 wget https://ghproxy.com/https://raw.githubusercontent.com/vpsxb/testrace/main/testrace.sh -O testrace.sh && bash testrace.sh
 ```
 
 ---
 
-## 🛠️ 功能脚本
+## ⚙️ 系统功能脚本
 
-### 1. 系统优化
+### 系统优化
 ```bash
-# 添加SWAP
+# 添加 SWAP 虚拟内存
 wget https://www.moerats.com/usr/shell/swap.sh && bash swap.sh
-
-# Fail2ban
-wget --no-check-certificate https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh && bash fail2ban.sh 2>&1 | tee fail2ban.log
-
-# 一键开启BBR（适用于较新的Debian、Ubuntu）
-echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
-echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
-sysctl -p
-sysctl net.ipv4.tcp_available_congestion_controllsmod | grep bbr
 ```
 
-### 2. 网络优化
 ```bash
-# 多功能BBR安装脚本
-wget -N --no-check-certificate "https://gist.github.com/zeruns/a0ec603f20d1b86de6a774a8ba27588f/raw/4f9957ae23f5efb2bb7c57a198ae2cffebfb1c56/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
+# Fail2ban 防暴力破解
+wget --no-check-certificate https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh && bash fail2ban.sh 2>&1 | tee fail2ban.log
+```
 
-# 锐速/BBRPLUS/BBR2/BBR3
-wget -O tcpx.sh "https://github.com/ylx2016/Linux-NetSpeed/raw/master/tcpx.sh" && chmod +x tcpx.sh && ./tcpx.sh
-
-# TCP窗口调优
+```bash
+# 美西服务器 TCP 调优
 wget http://sh.nekoneko.cloud/tools.sh -O tools.sh && bash tools.sh
 ```
 
-### 3. 其他功能
+### 网络加速
 ```bash
-# 添加warp
-wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh [option] [lisence/url/token]
+# 一键开启 BBR
+echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf && echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf && sysctl -p
+```
 
+```bash
+# 多功能 BBR 脚本
+wget -N --no-check-certificate "https://gist.github.com/zeruns/a0ec603f20d1b86de6a774a8ba27588f/raw/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
+```
+
+```bash
+# 锐速/BBR2/BBR3 混合加速
+wget -O tcpx.sh "https://github.com/ylx2016/Linux-NetSpeed/raw/master/tcpx.sh" && chmod +x tcpx.sh && ./tcpx.sh
+```
+
+```bash
+# WARP 双栈网络
+wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh [option] [lisence/url/token]
+```
+
+### 端口检测
+```bash
 # 25端口开放测试
 telnet smtp.aol.com 25
 ```
 
 ---
 
-## 🚀 一键安装常用环境及软件
+## 📦 一键安装常用软件
 
-### 1. 常用工具
+### 开发环境
 ```bash
-# Docker
+# Docker 容器环境
 curl -sSL https://get.daocloud.io/docker | sh
+```
 
-# Python
+```bash
+# Python 环境
 curl -O https://raw.githubusercontent.com/lx969788249/lxspacepy/master/pyinstall.sh && chmod +x pyinstall.sh && ./pyinstall.sh
+```
 
-# iPerf3
+```bash
+# iPerf3 网络测试
 apt install iperf3
+```
 
-# Realm
+### 代理工具
+```bash
+# Realm 隧道转发
 bash <(curl -L https://raw.githubusercontent.com/zhouh047/realm-oneclick-install/main/realm.sh)
+```
 
-# gost
+```bash
+# GOST 多协议代理
 wget --no-check-certificate -O gost.sh https://raw.githubusercontent.com/qqrrooty/EZgost/main/gost.sh && chmod +x gost.sh && ./gost.sh
 ```
 
-### 2. 控制面板
+### 管理面板
 ```bash
 # 极光面板
 bash <(curl -fsSL https://raw.githubusercontent.com/Aurora-Admin-Panel/deploy/main/install.sh)
+```
 
+```bash
 # 哪吒监控
 curl -L https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -o nezha.sh && chmod +x nezha.sh && sudo ./nezha.sh
-
-# WARP
-wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh [option] [lisence/url/token]
 ```
 
 ---
 
-## 📝 使用说明
-
-1. **所有脚本均需以 `root` 用户权限执行**。
-2. **执行前请确保网络连接正常**。
-3. **如有特殊需求，可自行调整脚本参数**。
-4. **定期更新脚本以获取最新功能**。
-
----
+## 🔗 维护声明
+1. 所有脚本均来自开源社区，**不保证安全性**  
+2. 定期执行 `apt update && apt upgrade` 更新系统  
+3. 建议在干净环境中测试脚本  
+4. 问题反馈请提供 **操作系统版本** 和 **错误日志**
